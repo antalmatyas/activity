@@ -22,9 +22,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <script src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="fonts.googleapis.com/css?family=Ubuntu+Mono" />
 </head>
 <body>
-    <a href="categories.php">Categories</a>
+    <a href="categories.php" style="color:lightgreen">Categories</a>
     <hr>
     <form action='' method='post'>
         Add new activity: 

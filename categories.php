@@ -31,6 +31,7 @@
     <meta name="author" content="">
     <title>dolog</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Mono" />
 </head>
 <body>
 <a href="index.php">Activity</a>
