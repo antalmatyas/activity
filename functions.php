@@ -18,7 +18,7 @@ function getBasic(){
                 $date = $row['act_date'];
                 $catid = $row['cat_id'];
                 $activity = getCategory($catid);
-                echo "<tr><td><a href='index.php?date=$date'>$date</a></td><td><a href='index.php?act=$activity'>$activity</a></td></tr>";
+                echo "<tr><td><a href='index.php?date=$date'>$date</a></td><td><a href='index.php?act=$catid'>$activity</a></td></tr>";
             }
 }
 
@@ -31,19 +31,19 @@ function postFilterDate(){
                 $date = $row['act_date'];
                 $catid = $row['cat_id'];
                 $activity = getCategory($catid);
-                echo "<tr><td><a href='index.php?date=$date'>$date</a></td><td><a href='index.php?act=$activity'>$activity</a></td></tr>";
+                echo "<tr><td><a href='index.php?date=$date'>$date</a></td><td><a href='index.php?act=$catid'>$activity</a></td></tr>";
             }
 }
 function getFilterAct(){
             global $connection;
             $getact = $_GET['act'];
-            $query = "SELECT * FROM act WHERE act_value='{$getact}'";
+            $query = "SELECT * FROM act WHERE cat_id='{$getact}'";
             $acts = mysqli_query($connection, $query);
             while($row = mysqli_fetch_assoc($acts)){
                 $date = $row['act_date'];
                 $catid = $row['cat_id'];
                 $activity = getCategory($catid);
-                echo "<tr><td><a href='index.php?date=$date'>$date</a></td><td><a href='index.php?act=$activity'>$activity</a></td></tr>";
+                echo "<tr><td><a href='index.php?date=$date'>$date</a></td><td><a href='index.php?act=$catid'>$activity</a></td></tr>";
             }
 }
 
@@ -56,7 +56,7 @@ function getFilterDate(){
                 $date = $row['act_date'];
                 $catid = $row['cat_id'];
                 $activity = getCategory($catid);
-                echo "<tr><td><a href='index.php?date=$date'>$date</a></td><td><a href='index.php?act=$activity'>$activity</a></td></tr>";
+                echo "<tr><td><a href='index.php?date=$date'>$date</a></td><td><a href='index.php?act=$catid'>$activity</a></td></tr>";
             }
 }
 ?>
