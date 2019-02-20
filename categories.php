@@ -1,4 +1,5 @@
 <?php
+    include "connect.php";
     if(isset($_POST['submit'])){
         $new_item = $_POST['item_value'];
         $newitem_query = "INSERT INTO categories (cat_name) VALUES('$new_item')";
@@ -29,6 +30,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>dolog</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <a href="index.php">Activity</a>
