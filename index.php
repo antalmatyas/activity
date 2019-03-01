@@ -75,5 +75,11 @@
     ?>
     </table>
     </div>
+    <hr>
+    <div>
+        <?php
+            getLevels();
+        ?>
+    </div>
 </body>
 </html>
