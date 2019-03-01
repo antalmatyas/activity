@@ -12,7 +12,7 @@ function getCategory($catid){
 
 function getBasic(){
             global $connection;
-            $query = "SELECT * FROM act";
+            $query = "SELECT * FROM act ORDER BY act_date";
             $acts = mysqli_query($connection, $query);
             while($row = mysqli_fetch_assoc($acts)){
                 $date = $row['act_date'];
@@ -25,7 +25,7 @@ function getBasic(){
 function postFilterDate(){
             global $connection;
             $getdate = $_POST['getdate'];
-            $query = "SELECT * FROM act WHERE act_date='{$getdate}'";
+            $query = "SELECT * FROM act WHERE act_date='{$getdate}' ORDER BY act_date";
             $acts = mysqli_query($connection, $query);
             while($row = mysqli_fetch_assoc($acts)){
                 $date = $row['act_date'];
@@ -38,7 +38,7 @@ function postFilterDate(){
 function getFilterAct(){
             global $connection;
             $getact = $_GET['act'];
-            $query = "SELECT * FROM act WHERE cat_id='{$getact}'";
+            $query = "SELECT * FROM act WHERE cat_id='{$getact}' ORDER BY act_date";
             $acts = mysqli_query($connection, $query);
             while($row = mysqli_fetch_assoc($acts)){
                 $date = $row['act_date'];
@@ -51,7 +51,7 @@ function getFilterAct(){
 function getFilterDate(){
             global $connection;
             $getdate = $_GET['date'];
-            $query = "SELECT * FROM act WHERE act_date='{$getdate}'";
+            $query = "SELECT * FROM act WHERE act_date='{$getdate}' ORDER BY act_date";
             $acts = mysqli_query($connection, $query);
             while($row = mysqli_fetch_assoc($acts)){
                 $date = $row['act_date'];
@@ -83,11 +83,7 @@ function getLevels(){
             <th>Level</th>
             </tr>";
             foreach ($cat as $key => $value) {
-                $getCatName = "SELECT * FROM categories WHERE cat_id=$key";
-                $category = mysqli_query($connection, $getCatName);
-                while($row = mysqli_fetch_assoc($category)){
-                    $catname = $row['cat_name'];
-                }
+                $catname = getCategory($key);
                 echo "<tr><td>$catname</td><td>$value</td><tr>";
             }
             echo "</table>";
