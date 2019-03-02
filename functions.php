@@ -84,7 +84,7 @@ function getLevels(){
             </tr>";
             foreach ($cat as $key => $value) {
                 $catname = getCategory($key);
-                echo "<tr><td>$catname</td><td>$value</td><tr>";
+                echo "<tr><td><a href='index.php?act=$key'>$catname</a></td><td>$value</td><tr>";
             }
             echo "</table>";
 }
