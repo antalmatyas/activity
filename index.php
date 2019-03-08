@@ -48,7 +48,7 @@
     <form action='index.php' method='post'>
     Filter by date: 
     <input type='date' name=getdate>
-    <input type='submit' name='filterdate'>
+    <input type='submit' name='filterdate' value="Filter">
     </form>
     <hr>
     <button onclick="window.location.href='index.php'">RESET</button>
