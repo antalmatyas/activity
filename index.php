@@ -31,7 +31,7 @@ Generally, figure out a layout for the page, as well as some kind of design
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Activity DB</title>
+    <title>Activity - DB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <script src="main.js"></script>
@@ -39,8 +39,7 @@ Generally, figure out a layout for the page, as well as some kind of design
     <link rel="stylesheet" type="text/css" href="fonts.googleapis.com/css?family=Ubuntu+Mono" />
 </head>
 <body>
-    <a href="categories.php" style="color:lightgreen">Categories</a>
-    <hr>
+    <?php include_once "header.php"; ?>
     <form action='' method='post'>
         Add new activity: 
         <select name="category">
@@ -54,7 +53,7 @@ Generally, figure out a layout for the page, as well as some kind of design
             }  
         ?>
         </select>
-        <input type='date' value="<?php echo $today; ?>" name="date">
+        <input type='date' value=<?php $today = date("Y-m-d"); echo $today; ?> name="date">
         <input type="submit" name="additem" value="ADD">
     </form>
     <hr>

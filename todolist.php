@@ -44,7 +44,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Activity - TodoList</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <script src="main.js"></script>
@@ -52,6 +52,7 @@
     <link rel="stylesheet" type="text/css" href="fonts.googleapis.com/css?family=Ubuntu+Mono" />
 </head>
 <body>
+    <?php include_once "header.php"; ?>
     <form action="todolist.php" method="post">
     <select name="sel_act" id="">
     <option value="">Select</option>
@@ -67,7 +68,7 @@
     ?>
     </select>
     <input type="text" name="custom_act" placeholder="or add custom">
-    <input type="date" name="todo_date">
+    <input type="date" value=<?php $today = date("Y-m-d"); echo $today; ?> name="todo_date">
     <input type="submit" name="submit" value="ADD">
     </form>
     <hr>
@@ -79,7 +80,7 @@
     </tr>
     <tr>
     <td>
-    <ul>
+    <ul style="list-style-type:none;">
         <?php
             $today = date("Y-m-d");
             getDayTodo($today);
@@ -87,7 +88,7 @@
     </ul>
     </td>
     <td>
-    <ul>
+    <ul style="list-style-type:none;">
         <?php
             $tomorrow = date("Y-m-d", strtotime("+1 day"));
             getDayTodo($tomorrow);
@@ -95,7 +96,7 @@
     </ul>
     </td>
     <td>
-    <ul>
+    <ul style="list-style-type:none;">
         <?php
             $overmorrow = date("Y-m-d", strtotime("+2 day"));
             getDayTodo($overmorrow);

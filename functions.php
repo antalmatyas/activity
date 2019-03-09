@@ -1,5 +1,6 @@
 <?php 
 include "connect.php";
+
 function getCategory($catid){
             global $connection;
             $getcat_query = "SELECT * FROM categories WHERE cat_id=$catid";
@@ -100,10 +101,10 @@ function getDayTodo($day){
         $done = $row['todo_done'];
         if($actid == NULL){
             if($done){
-                echo "<li style='text-decoration:line-through;'><a href='todolist.php?done=$todoid'>$custom</a></li>";
+                echo "<li style='text-decoration:line-through;'><a href='todolist.php?done=$todoid'>> $custom</a></li>";
             }
             else{
-                echo "<li><a href='todolist.php?done=$todoid'>$custom</a></li>";
+                echo "<li><a href='todolist.php?done=$todoid'>> $custom</a></li>";
             }
         }
         else{
@@ -116,10 +117,10 @@ function getDayTodo($day){
                 $activity = $one['cat_name'];
             }
             if($done){
-                echo "<li style='text-decoration:line-through;'><a href='todolist.php?done=$todoid'>$activity</a></li>";
+                echo "<li style='text-decoration:line-through;'><a href='todolist.php?done=$todoid'>> $activity</a></li>";
             }
             else{
-                echo "<li><a href='todolist.php?done=$todoid'>$activity</a></li>";
+                echo "<li><a href='todolist.php?done=$todoid'>> $activity</a></li>";
             }
         }
         

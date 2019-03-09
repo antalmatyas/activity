@@ -29,12 +29,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>dolog</title>
+    <title>Activity - Categories</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Mono" />
 </head>
 <body>
-<a href="index.php">Activity</a>
+<?php include_once "header.php"; ?>
 <form action="" method="post">
     <table>
         <tr>
