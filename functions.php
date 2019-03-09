@@ -88,4 +88,41 @@ function getLevels(){
             }
             echo "</table>";
 }
+
+function getDayTodo($day){
+    global $connection;
+    $query = "SELECT * FROM todolist WHERE todo_date='{$day}'";
+    $getlist = mysqli_query($connection, $query);
+    while($row = mysqli_fetch_assoc($getlist)){
+        $todoid = $row['todo_id'];
+        $actid = $row['todo_act_id'];
+        $custom = $row['todo_custom'];
+        $done = $row['todo_done'];
+        if($actid == NULL){
+            if($done){
+                echo "<li style='text-decoration:line-through;'><a href='todolist.php?done=$todoid'>$custom</a></li>";
+            }
+            else{
+                echo "<li><a href='todolist.php?done=$todoid'>$custom</a></li>";
+            }
+        }
+        else{
+            $getcat_query = "SELECT * FROM categories WHERE cat_id=$actid";
+            $getcat = mysqli_query($connection, $getcat_query);
+            if(!$getcat){
+                die("Query failed: " . mysqli_error($connection));
+            }
+            while($one = mysqli_fetch_assoc($getcat)){
+                $activity = $one['cat_name'];
+            }
+            if($done){
+                echo "<li style='text-decoration:line-through;'><a href='todolist.php?done=$todoid'>$activity</a></li>";
+            }
+            else{
+                echo "<li><a href='todolist.php?done=$todoid'>$activity</a></li>";
+            }
+        }
+        
+    }
+}
 ?>

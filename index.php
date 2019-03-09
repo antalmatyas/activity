@@ -1,3 +1,17 @@
+<!--
+Implement daily todolist where you can choose from the categories list or give a new one
+to add to the list, and this time it only adds to the activity, and to the current date,
+when the item on the list has been ticked
+
+Can also implement different counters to keep track of days when all the list items were
+completed, or to count consecutive days on the same category item / project
+
+Would also be nice to implement random daily quest feature, which chooses one item from
+the categories list and gives it as a random extra daily quest for earning extra points
+
+Generally, figure out a layout for the page, as well as some kind of design
+-->
+
 <?php 
     include "functions.php";
     include "connect.php";
@@ -46,7 +60,7 @@
     <hr>
     <div>
     <form action='index.php' method='post'>
-    Filter by date: 
+        Filter by date: 
     <input type='date' name=getdate>
     <input type='submit' name='filterdate' value="Filter">
     </form>
@@ -71,7 +85,6 @@
         else{
             getBasic();
         }
-        
     ?>
     </table>
     </div>
