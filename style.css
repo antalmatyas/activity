@@ -10,3 +10,6 @@ a{
 ul.list{
     list-style-type:none;
 }
+.input-field{
+    font-family: "Ubuntu Mono";
+}

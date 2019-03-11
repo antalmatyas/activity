@@ -59,8 +59,8 @@
             }
         ?>
         <tr>
-        <td><input type="text" name="item_value" autofocus></td>
-        <td><input type="submit" name="submit" value="Add"></td>
+        <td><input class="input-field" type="text" name="item_value" autofocus></td>
+        <td><input class='input-field' type="submit" name="submit" value="ADD"></td>
         </tr>
     </table>
     </form>

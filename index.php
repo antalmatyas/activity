@@ -42,7 +42,7 @@ Generally, figure out a layout for the page, as well as some kind of design
     <?php include_once "header.php"; ?>
     <form action='' method='post'>
         Add new activity: 
-        <select name="category">
+        <select class='input-field' name="category">
         <?php 
             $cat_query = "SELECT * FROM categories";
             $categories = mysqli_query($connection, $cat_query);
@@ -53,18 +53,18 @@ Generally, figure out a layout for the page, as well as some kind of design
             }  
         ?>
         </select>
-        <input type='date' value=<?php $today = date("Y-m-d"); echo $today; ?> name="date">
-        <input type="submit" name="additem" value="ADD">
+        <input class='input-field' type='date' value=<?php $today = date("Y-m-d"); echo $today; ?> name="date">
+        <input class='input-field' type="submit" name="additem" value="ADD">
     </form>
     <hr>
     <div>
     <form action='index.php' method='post'>
         Filter by date: 
-    <input type='date' name=getdate>
-    <input type='submit' name='filterdate' value="Filter">
+    <input class='input-field' type='date' name=getdate>
+    <input class='input-field' type='submit' name='filterdate' value="Filter">
     </form>
     <hr>
-    <button onclick="window.location.href='index.php'">RESET</button>
+    <button class='input-field' onclick="window.location.href='index.php'">RESET</button>
     <hr>
     <table>
     <tr>

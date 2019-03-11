@@ -54,7 +54,7 @@
 <body>
     <?php include_once "header.php"; ?>
     <form action="todolist.php" method="post">
-    <select name="sel_act" id="">
+    <select class='input-field' name="sel_act" id="">
     <option value="">Select</option>
     <?php
         global $connection;
@@ -67,9 +67,9 @@
         }
     ?>
     </select>
-    <input type="text" name="custom_act" placeholder="or add custom">
-    <input type="date" value=<?php $today = date("Y-m-d"); echo $today; ?> name="todo_date">
-    <input type="submit" name="submit" value="ADD">
+    <input class='input-field' type="text" name="custom_act" placeholder="or add custom">
+    <input class='input-field' type="date" value=<?php $today = date("Y-m-d"); echo $today; ?> name="todo_date">
+    <input class='input-field' type="submit" name="submit" value="ADD">
     </form>
     <hr>
     <table>
